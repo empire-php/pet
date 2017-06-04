@@ -77,6 +77,7 @@ class ReportsController extends Controller {
         $contact_name = $request->get('lost_pet_contact_name');
         $contact_email = $request->get('lost_pet_contact_email');
         $date = $request->get('lost_pet_date');
+        $date=date("Y-m-d", strtotime($date));
         $time = $request->get('lost_pet_time');
 //        $url = $request->get('filename');
         $img = $request->get('pngimageData');
@@ -153,13 +154,13 @@ class ReportsController extends Controller {
             $result = \App\Pet::where('id',$report->pet_id)->update($pet_data);
             if($img)
             {
-                $file_name= basename($url);
+                //$file_name= basename($url);
                 $img = str_replace('data:image/png;base64,', '', $img);
                 $img = str_replace(' ', '+', $img);
                 $data = base64_decode($img);
-                file_put_contents("images/pets/".$file_name, $data);
+                file_put_contents("images/pets/".$report->pet_id.".png", $data);
                 $photo_data = [
-                    'url' => $file_name,
+                    'url' => $report->pet_id.".png",
                     'updated_at' =>Date('Y-m-d H:i:s')
                 ];
                 $result = \App\Photo::where('pet_id',$report->pet_id)->update($photo_data);
@@ -179,7 +180,7 @@ class ReportsController extends Controller {
             }
             $ubigeo_id=DB::table('ubigeos')->max('id');    
             $location_data = [
-                'address' =>$last_seen,
+                'address' =>$address,
                 'latitude' => $latitude,
                 'longitude' => $longitude,
                 'ubigeo_id' => $ubigeo_id,
@@ -220,10 +221,11 @@ class ReportsController extends Controller {
         {
             $font_file= storage_path() . '/fonts/3b9f85024beb281bbf09edb78103a64d.ttf';
             $imagick = new Imagick();
-            $imagick ->setresolution(350, 350);
+            //$imagick ->setresolution(150, 150);
             $imagick->readImage($pdf_file);
             $imagick->setImageFormat('jpg');
-	    $imagick->resampleImage(288,288,imagick::FILTER_UNDEFINED,1);
+	    //$imagick->resampleImage(288,288,imagick::FILTER_UNDEFINED,1);
+            $imagick ->setImageCompressionQuality(100);
             $jpg_file = storage_path() . '/report.jpg';
             $imagick->writeImages($jpg_file, false); 
             return response()->download($jpg_file);

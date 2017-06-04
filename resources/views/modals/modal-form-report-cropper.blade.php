@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="modal fade" id="modal-cropper" aria-labelledby="modalLabel" role="dialog" tabindex="-1" data-width="760" style="z-index: 9999;">
+  <div class="modal fade" id="modal-cropper" aria-labelledby="modalLabel" role="dialog" tabindex="-1" data-width="400" style="z-index: 9999;">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header" style="border-bottom: 1px solid #e5e5e5;padding: 18px 30px;">
@@ -7,10 +7,10 @@
           <h5 class="modal-title" id="modalLabel">Crop the image</h5>
         </div>
         <div class="modal-body">
-          <div style="width:100%">
+          <div style="width:80%;margin:0px auto;">
             <img id="cropper-image" src="">
           </div>
-          <div class="docs-data">
+          <div class="docs-data" style="display:none;">
             <div style="display:flex;">
               <div class="input-group input-group-sm options-left col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <label class="input-group-addon" for="dataX">X</label>

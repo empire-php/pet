@@ -1,4 +1,4 @@
-<header>
+<header style='z-index:1000;'><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
   <!-- Header Top -->
   <div class="header-top">

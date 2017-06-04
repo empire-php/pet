@@ -361,7 +361,7 @@ h3.title {
 /* Content */
 
 section#content {
-  margin-bottom: 105px;
+  /*margin-bottom: 105px;*/
 }
 
 /* Block Filters */
@@ -431,7 +431,7 @@ input[type="submit"]:hover {
 /* Block Video */
 
 .block-video {
-  background-image: url("../img/bg.png");
+  background-image: url("../img/bg.jpg");
   background-position-x: center;
   background-position-y: bottom;
   background-size: cover;
@@ -439,7 +439,10 @@ input[type="submit"]:hover {
   position: relative;
   width: 100%;
 }
-
+.overlay-image{
+  width:100%;
+  height:auto;
+}
 a.btn-video {
   border: 1px solid #E63A38;
   border-radius: 3px;
@@ -486,6 +489,7 @@ a.btn-video:hover {
   display: block;
   height: 16px;
   width: 34px;
+  z-index:2;
 }
 
 .block-video .arrow-down {
@@ -627,7 +631,7 @@ a.btn-video:hover {
   position: relative;
 }
 
-#block-home-gallery .home-
+#block-home-gallery .pets-list
 {
   display: inline-flex;
   position: absolute;
@@ -754,20 +758,24 @@ a.btn-video:hover {
   padding-left: 13px;
 }
 
-#block-gallery-lost li a p.gallery-item-birthday {
+.pets-list li a p.gallery-item-birthday {
   background: url('../img/sprite_vertical.png') no-repeat 0 -86px;
+  height:20px;
 }
 
-#block-gallery-lost li a p.gallery-item-location {
+.pets-list li a p.gallery-item-location {
   background: url('../img/sprite_vertical.png') no-repeat 0 -127px;
+  height:20px;
 }
 
 #block-gallery-founds li a p.gallery-item-birthday {
   background: url('../img/sprite_vertical.png') no-repeat 0 -206px;
+  height:20px;
 }
 
 #block-gallery-founds li a p.gallery-item-location {
   background: url('../img/sprite_vertical.png') no-repeat -1px -247px;
+  height:20px;
 }
 
 .gallery-item-hover, .gallery-div-hover {
@@ -1002,7 +1010,7 @@ a.btn-video:hover {
 .block-reports li {
   display: block;
   float: left;
-  height: 370px;
+  height: 390px;
   padding: 5px;
   width: 216px;
 }
@@ -1081,21 +1089,23 @@ a.btn-video:hover {
   border-bottom: 2px solid #1AA344 !important;
 }
 
-.block-reports li a.report-lost-add{
-  background: #F9F9F9;
-  display: inline-block;
-  height: 380px;
-  padding-top: 160px;
-  text-align: center;
-  width: 206px;
+.block-reports li a.report-lost-add {
+    background: #F9F9F9;
+    display: inline-block;
+    height: 380px;
+    padding-top: 160px;
+    text-align: center;
+    width: 206px;
+    color: #B4C0C6;
 }
 .block-reports li a.report-found-add {
-  background: #F9F9F9;
-  display: inline-block;
-  height: 380px;
-  padding-top: 160px;
-  text-align: center;
-  width: 206px;
+    background: #F9F9F9;
+    display: inline-block;
+    height: 380px;
+    padding-top: 160px;
+    text-align: center;
+    width: 206px;
+    color: #B4C0C6;
 }
 .block-reports li a.report-lost-add em {
   border: 3px solid #b7b7b7;
@@ -1206,7 +1216,7 @@ a.btn-video:hover {
 
 .block-team{
   height: 80vh;
-  background-image: url("../images/colored_about_us_item_1.png");
+  /*background-image: url("../images/colored_about_us_item_1.png");*/
   position: relative;
   background-size: cover;
   font-family: "Montserrat Ultra Light", Arial, "Georgia", serif;
@@ -1241,7 +1251,6 @@ a.btn-video:hover {
 }
 
 .block-help {
-  background-image: url("../img/bg-subscription.png");
   position: relative;
   background-size: 100%;
 }
@@ -1275,7 +1284,7 @@ a.btn-video:hover {
 }
 
 .block-help .block-help-container .block-help-title h5{
-  padding-top: 30px;
+  padding-top: 10px;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -1317,6 +1326,15 @@ a.btn-video:hover {
   font-weight: bold;
   font-size: 16px;
   color: #717171;
+}
+
+.block-help-content .col-lg-9.col-lg-offset-2.col-md-9.col-md-offset-2.col-sm-10.col-sm-offset-2 {
+    margin-left: 8%;
+    width: 90%;
+}
+
+.block-help-content .col-lg-3.col-md-6.col-sm-6 {
+    padding-right: 55px;
 }
 
 .block-help .block-help-container .block-help-start{
@@ -1417,7 +1435,7 @@ a.btn-video:hover {
   margin: auto;    
   /*height:auto;*/
   max-width: 370px;
-  max-height: 740px;
+  max-height: 580px;
 }
 
 .modal-content h4 {
@@ -1521,7 +1539,7 @@ a.btn-video:hover {
   display: block;
   height: 50px;
   margin: 0;
-  padding: 10px 17px;
+  padding: 25px 17px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
@@ -1883,7 +1901,7 @@ a.btn-video:hover {
 
 .modal-form-report .form-actions {
   margin-bottom: 0;
-  margin-top: 72px;
+  /*margin-top: 72px;*/
 }
 
 .modal-form-report .form-actions .btn {
@@ -2033,6 +2051,11 @@ a.btn-video:hover {
 #pet-detail-map {
   height: 240px;
   margin-bottom: 10px;
+}
+#pet-detail-map-overlay {
+  position:relative;
+  height: 240px;
+  margin-top: -250px;
 }
 
 #pet-found-map,
@@ -2721,7 +2744,7 @@ footer .block-socialnetwork li a.link-instagran {
     margin-top: -10px;
   }
   .block-video {
-    height: 250px;
+    height: 100vh;
   }
   .block-video-content {
     padding-top: 80px;
