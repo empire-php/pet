@@ -17,10 +17,10 @@ class CreateReportsTable extends Migration
             $table->bigInteger('pet_id')->unsigned();
             $table->bigInteger('last_location_id')->unsigned();
             $table->timestamp('date');
-            $table->string('description', 255);
+            $table->string('description', 255)->nullable();
             $table->string('status', 45);
-            $table->integer('reward');
-            $table->string('code_qr', 255);
+            $table->integer('reward')->nullable();
+            $table->string('code_qr', 255)->nullable();
             $table->timestamps();
 //            $table->foreign('pet_id')->references('id')->on('pets')->onUpdate('CASCADE');
 //            $table->foreign('last_location_id')->references('id')->on('locations')->onUpdate('CASCADE');

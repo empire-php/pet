@@ -19,7 +19,7 @@ class CreateLocationsTable extends Migration
             $table->double('latitude', 10,8);
             $table->double('longitude', 10, 8);
             $table->integer('ubigeo_id');
-            $table->string('level', 45);
+            $table->string('level', 45)->nullable();
             $table->timestamps();
         });
     }

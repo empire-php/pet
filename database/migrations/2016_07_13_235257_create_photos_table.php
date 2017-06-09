@@ -16,8 +16,8 @@ class CreatePhotosTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('pet_id')->unsigned();
             $table->string('url', 255);
-            $table->string('width', 45);
-            $table->string('height', 45);
+            $table->string('width', 45)->nullable();
+            $table->string('height', 45)->nullable();
             $table->timestamps();
 //            $table->foreign('pet_id')->references('id')->on('pets')->onUpdate('CASCADE');
         });

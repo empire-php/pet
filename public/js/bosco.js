@@ -124,7 +124,7 @@ function gallery_item_over(id, status) {
         data: {report_id: id, status: status},
         success: function (data) {
             if (data.result) {
-                $('.pet-detail-image').html('<img src="/images/pets/' + data.pet.pet_image + '">');
+                $('.pet-detail-image').html('<img src="/images/pets/' + data.pet.pet_image + '" style="width:100%;">');
                 $('.pet-detail-location').html(data.pet.address);
                 $('.owner-detail-phone').html('<a class="report-phone" href="tel:' + data.pet.user_phone + '">' + data.pet.user_phone + '</a>');
                 $('.owner-detail-name').html(data.pet.user_name);

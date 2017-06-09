@@ -15,7 +15,7 @@
             </div>
           </div>
           <span class="report-detail-lost-image">
-            <img src="{{ asset('images/report_detail_image.png') }}">
+            <img src="{{ asset('images/report_detail_image.png') }}" style="width:100%;">
           </span>
           <span class="report-detail-lost-phone">
             <a class="report-phone" href="tel:969 003 009">969 003 009</a>
